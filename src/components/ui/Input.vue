@@ -4,7 +4,9 @@
         v-if="title.length > 1"
         :for="randomId"
         class="input__title"
-    >{{title}}</label>
+    >
+      {{title}}
+    </label>
     <input
         :id="randomId"
         :type="type"

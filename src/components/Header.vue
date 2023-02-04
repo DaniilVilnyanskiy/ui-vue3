@@ -1,7 +1,8 @@
 <template>
   <header class="header">
-    <div class="container header__container">
-      <router-link to="/">UI Vue3, Composition API, Vite</router-link>
+    <div class="container header__container d-flex justify-content-between align-items-baseline">
+      <router-link to="/">Nav page</router-link>
+      <h2>UI Vue3, Composition API, Vite</h2>
     </div>
   </header>
 </template>

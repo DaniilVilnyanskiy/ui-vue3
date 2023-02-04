@@ -1,4 +1,5 @@
 import {createRouter, createWebHistory} from "vue-router";
+
 import Index from '../views/Index.vue';
 import Main from '../views/Main.vue';
 import Ui from '../views/Ui.vue';

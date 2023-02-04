@@ -1,12 +1,7 @@
-<script setup lang="ts">
 
-
-
-</script>
 <template>
   <div class="container">
     <h2>Index view</h2>
-
     <ul>
       <li>
         <router-link to="/main">Main</router-link>
@@ -17,3 +12,6 @@
     </ul>
   </div>
 </template>
+<script lang="ts">
+
+</script>

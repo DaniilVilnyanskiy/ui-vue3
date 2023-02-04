@@ -1,18 +1,40 @@
 <template>
-  <button :class="['btn', `btn_${color}`]">{{ label }}</button>
+  <button
+      :class="['btn', `btn_${color}`]"
+      @click="handlerClick"
+  >
+    <span>{{ label }}</span>
+    <Icon name="add" />
+  </button>
 </template>
 
-<script setup>
-const props = defineProps({
-  label: {
-    type: String,
-    default: 'Button'
+<script>
+import Icon from "./Icon.vue";
+export default {
+  components: {
+    Icon
   },
-  color: {
-    type: String,
-    default: 'primary'
+  props: {
+    label: {
+      type: String,
+      default: 'Button'
+    },
+    color: {
+      type: String,
+      default: 'primary'
+    }
+  },
+  data () {
+    return {
+      test: 'test'
+    }
+  },
+  methods: {
+    handlerClick(e) {
+      this.$emit("clickButton", this);
+    }
   }
-})
+}
 </script>
 <style lang="scss">
 .btn {
@@ -27,9 +49,16 @@ const props = defineProps({
   font-size: 16px;
   line-height: 20px;
   transition: .3s ease-in-out;
+  svg {
+    margin-left: 10px;
+    transition: .3s ease-in-out;
+  }
   &_primary {
     background: var(--primary);
-    color: var(--txt-black-1);
+    color: var( --black-primary);
+    svg {
+      fill: var(--black-primary);
+    }
     &:hover {
       background: var(--primary-hover);
     }
@@ -37,6 +66,9 @@ const props = defineProps({
   &_secondary {
     background: var(--black-light);
     color: var(--white);
+    svg {
+      fill: var(--white);
+    }
     &:hover {
       background: var(--black-primary);
       color: var(--white);
@@ -45,10 +77,16 @@ const props = defineProps({
   &_outline {
     background: transparent;
     border: 1px solid var(--outline);
+    svg {
+      fill: var(--black-primary);
+    }
     &:hover {
-      background: var(--txt-black-1);
-      border: 1px solid var(--txt-black-1);
+      background: var( --black-primary);
+      border: 1px solid var( --black-primary);
       color: var(--white);
+      svg {
+        fill: var(--white);
+      }
     }
   }
 }

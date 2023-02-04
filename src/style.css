@@ -10,16 +10,21 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
+  --box-shadow: 0px 8px 24px rgba(38, 42, 49, 0.04);
+  --transition: .3s ease-in-out;
+  --border-radius: 4px;
+
   --white: white;
   --primary: #FED731;
   --primary-hover: #FED131;
   --black-primary: #262A31;
   --black-light: #383A44;
   --outline: #9DA1A6;
-
-  --txt-black-1: #262A31;;
+  --disable: #b8b8b8;
   --txt-gray-1: #999999;
+  --txt-gray-2: #717481;
 }
+
 
 body {
   margin: 0;
